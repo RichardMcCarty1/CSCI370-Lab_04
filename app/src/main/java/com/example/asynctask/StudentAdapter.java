@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.asynctask.R;
@@ -48,11 +49,13 @@ public class StudentAdapter extends BaseAdapter {
         TextView firstName = rowView.findViewById(R.id.first_name);
         TextView lastName = rowView.findViewById(R.id.last_name);
         TextView major = rowView.findViewById(R.id.major);
+        ImageView icon = rowView.findViewById(R.id.category_thumbnail);
 
         Student student = (Student) getItem(position);
         firstName.setText(student.getFirstName());
         lastName.setText(student.getLastName());
         major.setText(student.getMajor());
+        icon.setImageResource(R.drawable.person);
 
         return rowView;
     }
